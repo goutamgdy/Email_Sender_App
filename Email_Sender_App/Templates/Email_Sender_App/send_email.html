@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send Email</title>
+</head>
+<body>
+    <h1>Send Email</h1>
+
+    <form action="{% url 'send_email' %}" method="post">
+        {% csrf_token %}
+
+        <label for="subject">Subject:</label>
+        <input type="text" name="subject" id="subject">
+
+        <label for="message">Message:</label>
+        <textarea name="message" id="message"></textarea>
+
+        <label for="email_from">Email From:</label>
+        <input type="email" name="email_from" id="email_from">
+
+        <label for="recipient_list">Recipient List:</label>
+        <input type="email" name="recipient_list" id="recipient_list">
+
+        <input type="submit" value="Send Email">
+    </form>
+</body>
+</html>
